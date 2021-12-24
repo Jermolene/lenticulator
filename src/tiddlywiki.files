@@ -1,0 +1,60 @@
+{
+	"tiddlers": [
+		{
+			"file": "app.js",
+			"fields": {
+				"type": "application/javascript",
+				"title": "lenticulator/app.js"
+			}
+		},
+		{
+			"file": "bridge-no-snow.jpg",
+			"fields": {
+				"type": "image/jpeg",
+				"title": "lenticulator/bridge-no-snow.jpg"
+			}
+		},
+		{
+			"file": "bridge-snow.jpg",
+			"fields": {
+				"type": "image/jpeg",
+				"title": "lenticulator/bridge-snow."
+			}
+		},
+		{
+			"file": "index.html",
+			"fields": {
+				"type": "text/html",
+				"title": "lenticulator/index.html"
+			}
+		},
+		{
+			"file": "pico.LICENSE.md",
+			"fields": {
+				"type": "text/x-markdown",
+				"title": "lenticulator/pico.LICENSE.md"
+			}
+		},
+		{
+			"file": "pico.min.css",
+			"fields": {
+				"type": "text/css",
+				"title": "lenticulator/pico.min.css"
+			}
+		},
+		{
+			"file": "pico.min.css.map",
+			"fields": {
+				"type": "text/plain",
+				"title": "lenticulator/pico.min.css.map"
+			}
+		},
+		{
+			"file": "styles.css",
+			"fields": {
+				"type": "text/css",
+				"title": "lenticulator/styles.css"
+			}
+		}
+	]
+}

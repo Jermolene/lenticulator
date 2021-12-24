@@ -1,0 +1,23 @@
+{
+  "name": "lenticulator",
+  "version": "1.0.0",
+  "description": "Print and fold lenticular pictures that change as the observer moves",
+  "main": "index.js",
+  "scripts": {
+    "make-tiddlers": "./bin/make-tiddlers.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jermolene/lenticulator.git"
+  },
+  "author": "Jeremy Ruston",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jermolene/lenticulator/issues"
+  },
+  "homepage": "https://github.com/jermolene/lenticulator#readme",
+  "dependencies": {
+    "puppeteer": "^13.0.1",
+    "tiddlywiki": "^5.2.1"
+  }
+}
