@@ -27,21 +27,21 @@
 			<h2>Step 1: Choose Images</h2>
 			<p>Choose the two images. Landscape orientation images work best. They should be the same size or have the same aspect ratio.</p>
 			<div class="grid">
-				<form>
+				<div>
 					<h3>Left Image</h3>
 					<img src="bridge-no-snow.jpg" id="leftImagePreview" class="imagePreview">
 					<input id="leftImageInput" type="file" accept="image/png, image/jpeg, image/webp"/>
-				</form>
-				<form>
+				</div>
+				<div>
 					<h3>Right Image</h3>
 					<img src="bridge-snow.jpg" id="rightImagePreview" class="imagePreview"/>
 					<input id="rightImageInput" type="file" accept="image/png, image/jpeg, image/webp"/>
-				</form>
+				</div>
 			</div>
 			<h2>Step 2: Choose Difficulty</h2>
 			<p>Select the number of strips into which each image should be sliced.</p>
 			<p>Larger numbers will give a more effective illusion but the narrow width of each strip may present more difficulties in scoring and folding accurately.</p>
-			<form>
+			<div>
 				Number of output slices: <select id="inputNumberOfOutputSlices">
 					<option value="16">16 slices - easy</option>
 					<option value="20">20 slices - fairly easy</option>
@@ -51,10 +51,10 @@
 					<option value="48">48 slices - very tricky</option>
 					<option value="64">64 slices - difficult</option>
 				</select>
-			</form>
+			</div>
 			<h2>Step 3: Print</h2>
 			<p>Print this page by clicking this button:</p>
-			<form><button id="btnPrint">Print</button></form>
+			<div><button id="btnPrint">Print</button></div>
 			<p>Select landscape mode to ensure the largest print area. Some printers also let you disable the usual print margins for an even larger print area</p>
 			<p>These instructions will not appear in the printed output.</p>
 		</div>
