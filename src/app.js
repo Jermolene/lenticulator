@@ -45,6 +45,10 @@ function updateOutput() {
 	while(outputWrapper.firstChild) {
 		outputWrapper.removeChild(outputWrapper.firstChild);
 	}
+	// Set the height of the output wrapper
+	const leftAspectRatio = leftImagePreview.naturalHeight / leftImagePreview.naturalWidth,
+		rightAspectRatio = rightImagePreview.naturalHeight / rightImagePreview.naturalWidth;
+	outputWrapper.style.height = `${Math.max(leftAspectRatio, rightAspectRatio) * outputWrapper.offsetWidth/2}px`;
 	// Bail if either image is not loaded
 	if(!leftImagePreview.complete || !rightImagePreview.complete) {
 		return;
@@ -58,11 +62,10 @@ function updateOutput() {
 		img.src = imageSrc;
 		// Clip the image to get the current slice
 		img.style.clipPath = `polygon(${xBase}% 0%, ${xBase + sliceWidth}% 0%, ${xBase + sliceWidth}% 100%, ${xBase}% 100%)`;
-		// Stack the slice horizontally
-		img.style.display = "inline-block";
-		img.style.width = "49.9999%"; // Urgh this should be 50% but then rounding errors sometimes cause the images to wrap to a new line
-		img.style.marginLeft = `-${xBase / 2}%`;
-		img.style.marginRight = `-${(100 - xBase - sliceWidth) / 2}%`;
+		// Position the slice accounting for the clip rectangle
+		img.style.position = "absolute"
+		img.style.left = (xBase + xOffset - xBase/2) + "%";
+		img.style.width = "50%";
 		outputWrapper.appendChild(img);
 	}
 	// Render the image slices
