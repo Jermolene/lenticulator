@@ -53,26 +53,26 @@ function updateOutput() {
 	if(!leftImagePreview.complete || !rightImagePreview.complete) {
 		return;
 	}
-	// Number of steps from 0% to 100%
-	const stepX = 100 / numOutputSlices;
+	// Percent width of each slice of original image
+	const sliceWidth = 100 / numOutputSlices;
 	// Helper to render a single slice
-	const addImageSlice = (imageSrc,xPercent,xStep) => {
+	const addImageSlice = (imageSrc,xBase,xOffset) => {
 		// Create the image element
 		const img = document.createElement("img");
 		img.src = imageSrc;
 		// Clip the image to get the current slice
-		img.style.clipPath = `polygon(${xPercent}% 0%, ${xPercent + stepX}% 0%, ${xPercent + stepX}% 100%, ${xPercent}% 100%)`;
+		img.style.clipPath = `polygon(${xBase}% 0%, ${xBase + sliceWidth}% 0%, ${xBase + sliceWidth}% 100%, ${xBase}% 100%)`;
 		// Position the slice accounting for the clip rectangle
 		img.style.position = "absolute"
-		img.style.left = (xPercent + xStep - xPercent/2) + "%";
+		img.style.left = (xBase + xOffset - xBase/2) + "%";
 		img.style.width = "50%";
 		outputWrapper.appendChild(img);
 	}
 	// Render the image slices
 	const imgLeftImageSrc = leftImagePreview.src,
 		imgRightImageSrc = rightImagePreview.src;
-	for(var x = 0; x < 100; x += stepX) {
+	for(var x = 0; x < 100; x += sliceWidth) {
 		addImageSlice(imgLeftImageSrc,x,0);
-		addImageSlice(imgRightImageSrc,x,stepX / 2);
+		addImageSlice(imgRightImageSrc,x,sliceWidth / 2);
 	}
 }
